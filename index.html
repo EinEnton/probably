@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="probablyMain">
+<head>
+    <title>Probably a task manager</title>
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/all.css">
+
+</head>
+<body ng-controller="mainController">
+<div id="head">
+    <a class="head-button head-button-left">Boards</a>
+    <span class="head-button head-button-left"><i class="fa fa-gear"></i><span class="sub-menu"><a ng-click="addColumn()">Add column</a></span></span>
+    <span class="probably-title"><span class="probably">Probably</span> something to do</span><span class="search"><input type="text" width="30" ng-model="searchFilter"><a><i class="fa fa-search"></i></a> </span>
+</div>
+<div id="board" ui-sortable ng-model="board.columns">
+    <div class="column" ng-repeat="column in board.columns">
+        <a ng-click="deleteColumn($index)" class="delete-column" ><i class="fa fa-times"></i></a>
+        <span class="column-caption" ng-hide="isInEditMode($index,-1,3)" ng-click="startEdit($index,-1,3)">{{column.caption}}</span>
+        <span class="column-caption" ng-show="isInEditMode($index,-1,3)"><input class="editor" ng-model="column.caption" ng-blur="stopEdit($index,-1,3)" /></span>
+        <div ui-sortable="{connectWith:'.card-sortable-container'}" class="card-sortable-container" ng-model="column.cards">
+        <div class="card" ng-repeat="card in column.cards | filter:searchFilter">
+            <a ng-click="deleteCard($parent.$index,$index)" class="delete-card"><i class="fa fa-times"></i></a>
+            <span class="card-title" ng-hide="isInEditMode($parent.$index,$index,1)" ng-click="startEdit($parent.$index,$index,1)">{{card.title}}</span>
+            <span class="card-title" ng-show="isInEditMode($parent.$index,$index,1)"><input class="editor" ng-model="card.title" ng-blur="stopEdit($parent.$index,$index,1)" /></span>
+
+            <span class="card-description" ng-hide="isInEditMode($parent.$index,$index,2)" ng-click="startEdit($parent.$index,$index,2)">{{card.description}}</span>
+            <span class="card-description" ng-show="isInEditMode($parent.$index,$index,2)" ng-click="startEdit($parent.$index,$index,2)"><textarea class="editor" ng-model="card.description" ng-blur="stopEdit($parent.$index,$index,1)" ></textarea></span>
+        </div>
+        </div>
+        <a ng-click="addCard($index)" class="add-card-button">add card</a>
+    </div>
+</div>
+
+
+
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+<script src="bower_components/angular-ui-sortable/sortable.js"></script>
+<script src="bower_components/ngstorage/ngStorage.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

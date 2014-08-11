@@ -1,0 +1,31 @@
+{
+  "name": "probably",
+  "version": "0.0.1",
+    "dependencies": {
+        "angular": "1.2.21",
+        "jquery": "2.1.1",
+        "jquery-ui": "1.11.0",
+        "components-font-awesome":"4.1.0",
+        "angular-ui-sortable":">=0.12.8",
+        "ngstorage":">0.3.0"
+    },
+  "homepage": "https://github.com/EinEnton/probably",
+  "authors": [
+    "Christian Messinger <c.messinger@gmx.de>"
+  ],
+  "description": "Local Kanban like task manager",
+  "main": "index.html",
+  "keywords": [
+    "kanban",
+    "local"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
