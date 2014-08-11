@@ -3,11 +3,11 @@
   "version": "0.0.1",
     "dependencies": {
         "angular": "1.2.21",
-        "jquery": "2.1.1",
+        "jquery": "components/jquery#~2.1.1",
         "jquery-ui": "1.11.0",
         "components-font-awesome":"4.1.0",
         "angular-ui-sortable":">=0.12.8",
-        "ngstorage":">0.3.0"
+        "ngstorage":">=0.3.0"
     },
   "homepage": "https://github.com/EinEnton/probably",
   "authors": [
