@@ -88,6 +88,18 @@ Storage.prototype.getObject = function(key) {
 /*the app*/
 
 var probablyMain=angular.module('probablyMain',['ui.sortable',"ngStorage"]);
+probablyMain.directive('pbEnterBlur', function () {
+    return function (scope, element, attrs) {
+        element.bind("keydown keypress", function (event) {
+            if(event.which === 13) {
+                $(element).blur();
+
+                event.preventDefault();
+            }
+        });
+    };
+});
+
 
 var mainController=probablyMain.controller("mainController",["$scope","$timeout","$localStorage",
     function($scope,$timeout,$localStorage){
@@ -138,7 +150,10 @@ var mainController=probablyMain.controller("mainController",["$scope","$timeout"
 
         $scope.addCard=function(colIndex){
             $scope.board.columns[colIndex].cards.push({'title':"New Card",'description':"Description"});
-            $scope.startEdit(colIndex,$scope.board.columns[colIndex].cards.length);
+            $timeout(function(){
+                var newCardIndex=$scope.board.columns[colIndex].cards.length;
+                $scope.startEdit(colIndex,newCardIndex,1);
+            });
         };
 
 }

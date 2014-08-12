@@ -50,7 +50,7 @@ table {
 
 /* END HTML Reset*/
 body {
-    background-color: #ecf0f1;
+    background-color: #f3f3f3;
     font-family:"Roboto","Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Arial, Calibri, Helvetica, Sans-Serif;
 }
 
@@ -59,7 +59,7 @@ a{
 }
 
 #head{
-    background-color: #34495e;
+    background-color: #2c3e50;
     width: 100%;
     height: 45px;
 
@@ -74,9 +74,10 @@ a{
     margin:5px;
     padding:8px;
     border-radius: 4px;
-    background-color:#7f8c8d ;
+    background-color:#34495e ;
     color:White;
     position: relative;
+    text-shadow: 1px 1px 1px rgba(2,2,2,0.5);
 }
 
 .head-button-left{
@@ -89,12 +90,12 @@ a{
     margin:5px;
     padding:5px;
     border-radius: 4px;
-    background-color:#7f8c8d ;
+    background-color:#34495e ;
     color:white;
 }
 
 #head .search input{
-    background-color: #7f8c8d;
+    background-color: #34495e;
     border: none;
 }
 
@@ -109,7 +110,7 @@ a{
     content: "\f14a";
     text-shadow: 1px 1px 2px #000;
     margin-right:5px;
-    color: #95a5a6;
+    color: #fff;
 
 }
 
@@ -124,6 +125,7 @@ a{
     top:0;
     right:0;
     bottom: 0;
+
 }
 
 
@@ -131,18 +133,34 @@ a{
     display: flex;
     flex-direction: column;
     width:250px;
-    background-color: #95a5a6;
-    border-radius:15px;
+    background-color: #fff;
+    border-radius:0 0 15px 15px;
     float:left;
     margin:20px;
     box-shadow: 2px  2px 2px #34495e;
     flex:0 0 260px;
     max-height: 100%;
-
+    padding:0;
 }
 
 .column .card-sortable-container{
     overflow: auto;
+    min-height: 50px;
+}
+
+.card-placeholder{
+    border:dashed #ecf0f1 2px;
+    border-radius: 5px;
+    box-shadow: 2px  2px 2px #333;
+    height:50px;
+    margin:5px;
+}
+
+.column .column-head{
+    background-color: #2c3e50;
+
+    height:40px;
+
 }
 
 .column .column-caption{
@@ -155,13 +173,15 @@ a{
     text-shadow:-1px -1px 2px #333;
     padding:5px;
     font-size: 120%;
+    min-height: 20px;
+
 }
 
 .card{
     display: block;
     margin:5px;
     margin-bottom:15px;
-    background-color: #ecf0f1;
+    background-color: #f4f7ff;
     border-radius: 5px;
     box-shadow: 2px  2px 2px #333;
     padding:10px;
@@ -173,6 +193,15 @@ a{
     text-shadow:2px 2px 1px white;
     font-weight: bold;
     font-size: 110%;
+    min-height: 20px;
+    min-width:80% ;
+}
+
+.card-description{
+    display: block;
+    min-height: 10px;
+    min-width:80% ;
+    white-space: pre-wrap;
 }
 
 .column .add-card-button
@@ -205,7 +234,7 @@ a{
     display:none;
     float:right;
     position:absolute;
-    color:#333;
+    color:#eee;
     right:10px;
     top:10px;
 }
@@ -218,7 +247,7 @@ a{
 .head-button .sub-menu{
 
     display:none;
-    background-color:#7f8c8d;
+    background-color:#34495e;
     padding:10px;
     border-radius: 0px 10px 10px 10px;
 
