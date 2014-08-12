@@ -47,13 +47,13 @@ var boardModel={"columns":[
                 description:"some blabla and text and stuff"
             },
             {
-                title:"Let's go",
-                description:"another blabla and text and stuff",
-                repetition:"daily"
+                title:"Pay for the hamburger",
+                description:"I will gladly pay you",
+                repetition:"weekly on Tuesday"
             },
             {
                 title:"Eat an apple",
-                description:"lorem ipsum argh..",
+                description:"it keeps the doctor away",
                 repetition:"daily"
             }
         ]
@@ -99,6 +99,7 @@ $('title').text('Probably ' + getRandomFromArray(titles));
 
 /*the app*/
 
+var DefaultCard = function(){this.title="New Card"; this.description="Description"};
 
 var probablyMain=angular.module('probablyMain',['ui.sortable',"ngStorage"]);
 
@@ -150,7 +151,7 @@ var mainController=probablyMain.controller("mainController",["$scope","$timeout"
         };
 
         $scope.addCard=function(colIndex){
-            $scope.board.columns[colIndex].cards.push({'title':"New Card",'description':"Description"});
+            $scope.board.columns[colIndex].cards.push(new DefaultCard());
             $scope.startEdit(colIndex,$scope.board.columns[colIndex].cards.length);
         };
 

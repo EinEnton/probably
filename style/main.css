@@ -200,6 +200,16 @@ a{
     color:#333;
 }
 
+.card-info-icon{
+    float: right;
+    margin-right: 10px;
+    color: #95a5a6;
+}
+
+.card-info-icon:hover{
+    color: #333;
+}
+
 .column:hover .delete-column{
     display: block;
 }
