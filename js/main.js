@@ -97,7 +97,7 @@ function getRandomFromArray(array) {
 }
 
 var newTitle = getRandomFromArray(titles);
-$('title').text(newTitle);
+$('title').text('Probably ' + newTitle);
 $('#innerTitle').text(newTitle);
 
 /*the app*/
