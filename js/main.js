@@ -48,11 +48,13 @@ var boardModel={"columns":[
             },
             {
                 title:"Let's go",
-                description:"another blabla and text and stuff"
+                description:"another blabla and text and stuff",
+                repetition:"daily"
             },
             {
-                title:"enough",
-                description:"lorem ipsum argh.."
+                title:"Eat an apple",
+                description:"lorem ipsum argh..",
+                repetition:"daily"
             }
         ]
     },
