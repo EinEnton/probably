@@ -85,7 +85,18 @@ Storage.prototype.getObject = function(key) {
     return value && JSON.parse(value);
 };
 
+
+// random title generator
+var titles = ['a task manager', 'what you will do today', 'you\'ll need a few more cards'];
+
+function getRandomFromArray(array) {
+    var index = Math.floor(Math.random() * (array.length));
+    return array[index];
+}
+$('title').text('Probably ' + getRandomFromArray(titles));
+
 /*the app*/
+
 
 var probablyMain=angular.module('probablyMain',['ui.sortable',"ngStorage"]);
 

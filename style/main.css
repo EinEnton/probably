@@ -175,6 +175,11 @@ a{
     font-size: 110%;
 }
 
+.card, .card-title, .card-description
+{
+    min-height:40px;
+}
+
 .column .add-card-button
 {
     font-weight: bold;
