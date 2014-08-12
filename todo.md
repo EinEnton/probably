@@ -5,3 +5,5 @@ Todo:
 - add "home column"
 - add automatic reset of repetitive tasks to home column
 - add setting for the repetition
+
+.
