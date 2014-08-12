@@ -12,7 +12,7 @@
 <div id="head">
     <a class="head-button head-button-left">Boards</a>
     <span class="head-button head-button-left"><i class="fa fa-gear"></i><span class="sub-menu"><a ng-click="addColumn()">Add column</a></span></span>
-    <span class="probably-title"><span class="probably">Probably</span> something to do</span><span class="search"><input type="text" width="30" ng-model="searchFilter"><a><i class="fa fa-search"></i></a> </span>
+    <span class="probably-title"><span class="probably">Probably</span> <span id="innerTitle">something to do</span></span><span class="search"><input type="text" width="30" ng-model="searchFilter"><a><i class="fa fa-search"></i></a> </span>
 </div>
 <div id="board" ui-sortable ng-model="board.columns">
     <div class="column" ng-repeat="column in board.columns">
