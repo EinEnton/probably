@@ -21,7 +21,16 @@
 <div id="board" ui-sortable ng-model="board.columns">
     <div class="column" ng-repeat="column in board.columns">
         <a ng-click="deleteColumn($index)" class="delete-column"><i class="fa fa-times"></i></a>
-        <span class="column-caption" ng-hide="isInEditMode($index,-1,3)" ng-click="startEdit($index,-1,3)">{{column.caption}}</span>
+        <span class="column-caption" ng-hide="isInEditMode($index,-1,3)" ng-click="startEdit($index,-1,3)">
+            <span ng-if="column.caption">
+                {{column.caption}}
+            </span>
+                <span ng-if="!column.caption" class="information-column-header">
+                    Click to Add Caption
+                </span>
+            </span>
+
+        </span>
         <span class="column-caption" ng-show="isInEditMode($index,-1,3)"><input class="editor" type="text"
                                                                                 placeholder="Column Name"
                                                                                 ng-model="column.caption"
