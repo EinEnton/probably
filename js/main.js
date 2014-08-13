@@ -77,16 +77,6 @@ var boardModel={"columns":[
     }
 ]};
 
-/*some helpers*/
-Storage.prototype.setObject = function(key, value) {
-    this.setItem(key, JSON.stringify(value));
-};
-
-Storage.prototype.getObject = function(key) {
-    var value = this.getItem(key);
-    return value && JSON.parse(value);
-};
-
 
 // random title generator
 var titles = ['a task manager', 'what you will do today', 'you\'ll need a few more cards', 'something to do'];

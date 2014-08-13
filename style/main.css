@@ -54,7 +54,7 @@ table {
 
 /* END HTML Reset*/
 body {
-    background-color: #f3f3f3;
+    background-color: #e0e0e0;
     font-family: "Roboto", "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Arial, Calibri, Helvetica, Sans-Serif;
 }
 
@@ -201,11 +201,12 @@ a {
     min-width:80% ;
 }
 
-.card-description{
+.card-description span{
     display: block;
     min-height: 10px;
     min-width:80% ;
     white-space: pre-wrap;
+    text-align: left;
 }
 
 .column .add-card-button {
