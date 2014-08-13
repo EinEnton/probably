@@ -37,7 +37,7 @@
         <div ui-sortable="{connectWith:'.card-sortable-container'}" class="card-sortable-container"
              ng-model="column.cards">
             <div class="card" ng-repeat="card in column.cards | filter:searchFilter">
-                <a ng-click="deleteCard($parent.$index)" class="delete-card"><i class="fa fa-times"></i></a>
+                <a ng-click="deleteCard($parent.$index, $index)" class="delete-card"><i class="fa fa-times"></i></a>
 
 
             <span class="card-info-icon" ng-if="card.repetition">
