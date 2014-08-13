@@ -47,12 +47,14 @@ var boardModel={"columns":[
                 description:"some blabla and text and stuff"
             },
             {
-                title:"Let's go",
-                description:"another blabla and text and stuff"
+                title:"Pay for the hamburger",
+                description:"I will gladly pay you",
+                repetition:"weekly on Tuesday"
             },
             {
-                title:"enough",
-                description:"lorem ipsum argh.."
+                title:"Eat an apple",
+                description:"it keeps the doctor away",
+                repetition:"daily"
             }
         ]
     },
@@ -85,7 +87,22 @@ Storage.prototype.getObject = function(key) {
     return value && JSON.parse(value);
 };
 
+
+// random title generator
+var titles = ['a task manager', 'what you will do today', 'you\'ll need a few more cards', 'something to do'];
+
+function getRandomFromArray(array) {
+    var index = Math.floor(Math.random() * (array.length));
+    return array[index];
+}
+
+var newTitle = getRandomFromArray(titles);
+$('title').text('Probably ' + newTitle);
+$('#innerTitle').text(newTitle);
+
 /*the app*/
+
+var DefaultCard = function(){this.title="New Card"; this.description="Description"};
 
 var probablyMain=angular.module('probablyMain',['ui.sortable',"ngStorage"]);
 probablyMain.directive('pbEnterBlur', function () {
@@ -149,7 +166,7 @@ var mainController=probablyMain.controller("mainController",["$scope","$timeout"
         };
 
         $scope.addCard=function(colIndex){
-            $scope.board.columns[colIndex].cards.push({'title':"New Card",'description':"Description"});
+            $scope.board.columns[colIndex].cards.push(new DefaultCard());
             $timeout(function(){
                 var newCardIndex=$scope.board.columns[colIndex].cards.length;
                 $scope.startEdit(colIndex,newCardIndex,1);
