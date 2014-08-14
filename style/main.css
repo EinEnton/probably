@@ -54,8 +54,8 @@ table {
 
 /* END HTML Reset*/
 body {
-    background-color: #e0e0e0;
-    font-family: "Roboto", "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Arial, Calibri, Helvetica, Sans-Serif;
+    background-color: #b9bdc4;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Arial, Calibri, Helvetica, Sans-Serif;
 }
 
 a {
@@ -63,14 +63,13 @@ a {
 }
 
 #head {
-    background-image: linear-gradient(to bottom, #018BA0 0%, #015F6D 100%);
+    background-image: linear-gradient(to bottom, #337aba 0%, #234e9c 100%);
     background-repeat: repeat-x;
-    border-color: #015663;
     width: 100%;
     height: 50px;
-    color: white;
-    font-weight: bold;
+    color: #f4f4f4;
     text-align: center;
+    vertical-align: middle;
     padding-top: 10px;
 }
 
@@ -78,11 +77,10 @@ a {
     display: inline-block;
     margin: 5px;
     padding: 8px;
-    border-radius: 4px;
-    background-color:#34495e ;
-    color: White;
+    border-radius: 3px;
+    background-image: linear-gradient(to bottom, #b9bdc4 0%, #f4f4f4 100%);
+    color: #444a54;
     position: relative;
-    text-shadow: 1px 1px 1px rgba(2,2,2,0.5);
 }
 
 .head-button-left {
@@ -96,10 +94,11 @@ a {
     padding: 5px;
     border-radius: 4px;
     background-color:#34495e ;
-    color: white;
+    color: #f4f4f4;
 }
 
 #head .search input {
+    color: #f4f4f4;
     background-color: #34495e;
     border: none;
 }
@@ -107,8 +106,9 @@ a {
 #head .probably {
     font-size: 140%;
     text-transform: uppercase;
-    text-shadow: 1px 1px 2px #000;
-    font-weight: bolder;
+
+    color: #f4f4f4;
+    text-shadow: 1px 1px 2px #444a54;
 }
 
 .probably::before {
@@ -116,7 +116,7 @@ a {
     content: "\f14a";
     text-shadow: 1px 1px 2px #000;
     margin-right: 5px;
-    color: #fff;
+    color: #f4f4f4;
 
 }
 
@@ -127,7 +127,7 @@ a {
     flex-wrap: nowrap;
     flex-direction: row;
     position: absolute;
-    background: #F6F9FD;
+    background: #b9bdc4;
     left: 0;
     top: 0;
     right: 0;
@@ -139,11 +139,13 @@ a {
     display: flex;
     flex-direction: column;
     width: 250px;
-    background-color: #fff;
-    border-radius:0 0 15px 15px;
+
+    background-color: #dbdee4;
+    /*background-image: linear-gradient(to bottom, #337aba 0%, #234e9c 100%);*/
+    border-radius:3px 3px 3px 3px;
     float: left;
     margin: 20px;
-    box-shadow: 1px 1px 1px 1px #222;
+    box-shadow: 1px 1px 1px 1px #444a54;
     flex: 0 0 260px;
     max-height: 100%;
     padding:0;
@@ -155,21 +157,21 @@ a {
 }
 
 .card-placeholder{
-    border:dashed #999 2px;
+    border:dashed #565d69 2px;
     border-radius: 5px;
-    box-shadow: 0px;
+    /*box-shadow: 0px;*/
     height:50px;
     margin:5px;
 }
 
 .column .column-head{
-    background-color: #F5F5F5;
+    background-color: #f4f4f4;
     height:40px;
 
 }
 
 .column-head{
-    background-image: linear-gradient(to bottom, #F5F5F5 0%, #CFCFCF 100%);
+    background-image: linear-gradient(to bottom, #565d69 0%, #444a54 100%);
     background-repeat: repeat-x;
 }
 
@@ -178,7 +180,7 @@ a {
     margin-bottom: 10px;
     margin-top: 5px;
     text-align: center;
-    color: black;
+    color: #f4f4f4;
     /*font-weight: bold;*/
     /*text-shadow: 1px 1px 1px #333;*/
     padding: 5px;
@@ -193,8 +195,8 @@ a {
     margin-bottom: 15px;
     background-image: linear-gradient(to bottom, #FFF 0%, #E6E6E6 100%);
     background-repeat: repeat-x;
-    text-shadow: 0px 1px 0px #FFF;
-    border-color: #222;
+    /*text-shadow: 0px 1px 0px #565d69;*/
+    border-color: #444a54;
     border-radius: 5px;
     box-shadow: 1px 1px 1px #222;
     padding: 10px;
@@ -202,12 +204,12 @@ a {
 
 .card-title {
     display: block;
-    color: #3A87AD;
-    text-shadow: 2px 2px 1px white;
+    color: #234e9c;
+    /*text-shadow: 1px 1px 1px #f4f4f4;*/
     /*font-weight: bold;*/
     font-size: 110%;
     min-height: 20px;
-    min-width:80% ;
+    min-width:80%;
 }
 
 .card-description span{
@@ -219,12 +221,17 @@ a {
 }
 
 .column .add-card-button {
-    font-weight: bold;
     font-size: 110%;
-    color: #444;
+    color: #444a54;
     display: block;
     text-align: center;
     margin: 5px;
+}
+
+.add-card-button::before{
+    font-family: FontAwesome;
+    content: "\f055";
+    margin-right: 5px;
 }
 
 .card:hover .delete-card {
@@ -234,26 +241,26 @@ a {
 .delete-card {
     display: none;
     float: right;
-    color: #333;
+    color: #444a54;
 }
 
 .card-info-icon {
     float: right;
     margin-right: 10px;
-    color: #95a5a6;
+    color: #565d69;
 }
 
 .card-info-icon:hover {
-    color: #999;
+    color: #444a54;
 }
 
 .information-to-user, .information-column-header {
-    color: #999;
+    color: #565d69;
     font-style: italic;
 }
 
 .information-column-header{
-    color: #999;
+    color: #b9bdc4;
 }
 
 .column:hover .delete-column {
@@ -262,14 +269,14 @@ a {
 
 .column {
     position: relative;
-    background: #f5f5f5;
+    background: #f4f4f4;
 }
 
 .delete-column {
     display: none;
     float: right;
     position: absolute;
-    color:#eee;
+    color: #f4f4f4;
     right: 10px;
     top: 10px;
 }
@@ -290,10 +297,11 @@ a {
     z-index: 10;
     left: 0px;
     top: 25px;
-    text-shadow: 1px 1px 2px #333;
-    box-shadow: 1px 1px 2px #333;
+    text-shadow: 1px 1px 2px #444a54;
+    box-shadow: 1px 1px 2px #565d69;
 }
 
 .head-button:hover .sub-menu, .sub-menu:hover {
     display: block;
 }
+
