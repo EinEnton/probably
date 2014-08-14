@@ -204,6 +204,7 @@ a {
 
 .card-title {
     display: block;
+
     color: #234e9c;
     /*text-shadow: 1px 1px 1px #f4f4f4;*/
     /*font-weight: bold;*/
@@ -228,19 +229,22 @@ a {
     margin: 5px;
 }
 
+
 .add-card-button::before{
     font-family: FontAwesome;
     content: "\f055";
     margin-right: 5px;
 }
 
-.card:hover .delete-card {
+.card:hover .delete-card ,
+.card:hover .card-button {
     display: block;
 }
 
-.delete-card {
+.card-button {
     display: none;
     float: right;
+
     color: #444a54;
 }
 
@@ -303,5 +307,30 @@ a {
 
 .head-button:hover .sub-menu, .sub-menu:hover {
     display: block;
+}
+
+
+.card-style-red{
+   background-color: #e74c3c;
+    color:white;
+}
+
+.card-style-blue{
+    background-color: #3498db;
+    color:white;
+}
+
+.card-style-green{
+    background-color: #2ecc71;
+    background-image: linear-gradient(to bottom, #94d146 0%, #abf251 100%);
+    /*color:white;*/
+}
+
+.card-style-option
+{
+    display:inline-block;
+    width: 20px;
+    height: 20px;
+    border:#ffffff 2px solid;
 }
 
