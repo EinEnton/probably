@@ -10,11 +10,12 @@ var boardModel={"columns":[
             {
                 title:"Hey ho",
                 description:"some blabla and text and stuff",
-                color:"red"
+                style:"red"
             },
             {
                 title:"Let's go",
-                description:"another blabla and text and stuff"
+                description:"another blabla and text and stuff",
+                style:"blue"
             },
             {
                 title:"enough",
@@ -92,7 +93,7 @@ $('#innerTitle').text(newTitle);
 
 /*the app*/
 
-var DefaultCard = function(){this.title="New Card"; this.description="Description"};
+var DefaultCard = function(){this.title="New Card"; this.description="Description";this.style="default";};
 
 var probablyMain=angular.module('probablyMain',['ui.sortable',"ngStorage"]);
 probablyMain.directive('pbEnterBlur', function () {
@@ -106,11 +107,13 @@ probablyMain.directive('pbEnterBlur', function () {
         });
     };
 });
-
+var definedStyles=["red","blue","green"];
 
 var mainController=probablyMain.controller("mainController",["$scope","$timeout","$localStorage",
     function($scope,$timeout,$localStorage){
         $scope.board=$localStorage.$default(boardModel);
+        $scope.allStyles=definedStyles;
+
         $scope.editColIndex=-1;
         $scope.editCardIndex=-1;
         $scope.editMode=-1;//1=title, 2=description
@@ -144,14 +147,17 @@ var mainController=probablyMain.controller("mainController",["$scope","$timeout"
         };
 
         $scope.stopEdit=function(colIndex,cardIndex,mode){
-            if($scope.editColIndex==colIndex &&
+
+            //stopEdit(-1) --> stop all the edits
+            if((colIndex==-1) || ($scope.editColIndex==colIndex &&
             $scope.editCardIndex==cardIndex&&
-            $scope.editMode==mode)
+            $scope.editMode==mode))
             {
                 $scope.editColIndex=-1;
                 $scope.editCardIndex=-1;
                 $scope.editMode=-1;
             }
+
 
         };
 
@@ -161,6 +167,12 @@ var mainController=probablyMain.controller("mainController",["$scope","$timeout"
                 var newCardIndex=$scope.board.columns[colIndex].cards.length;
                 $scope.startEdit(colIndex,newCardIndex,1);
             });
+        };
+
+        $scope.setStyle=function(card,style){
+
+            card.style=style;
+            $scope.stopEdit(-1);
         };
 
 }
