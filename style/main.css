@@ -63,10 +63,11 @@ a {
 }
 
 #head {
-    background-color: #2c3e50;
+    background-image: linear-gradient(to bottom, #018BA0 0%, #015F6D 100%);
+    background-repeat: repeat-x;
+    border-color: #015663;
     width: 100%;
-    height: 45px;
-
+    height: 50px;
     color: white;
     font-weight: bold;
     text-align: center;
@@ -120,12 +121,13 @@ a {
 }
 
 #board {
-    margin-top: 40px;
+    margin-top: 60px;
     overflow: auto;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     position: absolute;
+    background: #F6F9FD;
     left: 0;
     top: 0;
     right: 0;
@@ -141,7 +143,7 @@ a {
     border-radius:0 0 15px 15px;
     float: left;
     margin: 20px;
-    box-shadow: 2px 2px 2px #34495e;
+    box-shadow: 1px 1px 1px 1px #222;
     flex: 0 0 260px;
     max-height: 100%;
     padding:0;
@@ -153,18 +155,22 @@ a {
 }
 
 .card-placeholder{
-    border:dashed #ecf0f1 2px;
+    border:dashed #999 2px;
     border-radius: 5px;
-    box-shadow: 2px  2px 2px #333;
+    box-shadow: 0px;
     height:50px;
     margin:5px;
 }
 
 .column .column-head{
-    background-color: #2c3e50;
-
+    background-color: #F5F5F5;
     height:40px;
 
+}
+
+.column-head{
+    background-image: linear-gradient(to bottom, #F5F5F5 0%, #CFCFCF 100%);
+    background-repeat: repeat-x;
 }
 
 .column .column-caption {
@@ -172,9 +178,9 @@ a {
     margin-bottom: 10px;
     margin-top: 5px;
     text-align: center;
-    color: white;
-    font-weight: bold;
-    text-shadow: -1px -1px 2px #333;
+    color: black;
+    /*font-weight: bold;*/
+    /*text-shadow: 1px 1px 1px #333;*/
     padding: 5px;
     font-size: 120%;
     min-height: 20px;
@@ -185,17 +191,20 @@ a {
     display: block;
     margin: 5px;
     margin-bottom: 15px;
-    background-color: #f4f7ff;
+    background-image: linear-gradient(to bottom, #FFF 0%, #E6E6E6 100%);
+    background-repeat: repeat-x;
+    text-shadow: 0px 1px 0px #FFF;
+    border-color: #222;
     border-radius: 5px;
-    box-shadow: 2px 2px 2px #333;
+    box-shadow: 1px 1px 1px #222;
     padding: 10px;
 }
 
 .card-title {
     display: block;
-    color: #222;
+    color: #3A87AD;
     text-shadow: 2px 2px 1px white;
-    font-weight: bold;
+    /*font-weight: bold;*/
     font-size: 110%;
     min-height: 20px;
     min-width:80% ;
@@ -225,7 +234,6 @@ a {
 .delete-card {
     display: none;
     float: right;
-
     color: #333;
 }
 
@@ -236,16 +244,16 @@ a {
 }
 
 .card-info-icon:hover {
-    color: #333;
+    color: #999;
 }
 
 .information-to-user, .information-column-header {
-    color: #95a5a6;
+    color: #999;
     font-style: italic;
 }
 
 .information-column-header{
-    color: #ecf0f1;
+    color: #999;
 }
 
 .column:hover .delete-column {
@@ -254,6 +262,7 @@ a {
 
 .column {
     position: relative;
+    background: #f5f5f5;
 }
 
 .delete-column {
