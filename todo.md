@@ -4,6 +4,8 @@ Todo:
 - add "home column" ??
 - add automatic reset of repetitive tasks to home column
 - add setting for the repetition
-- individual color support
+- individual color support with css-hover-dropdown color selector
+- more color styles for cards
 - nicer styling
+
 .
