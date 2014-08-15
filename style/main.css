@@ -193,7 +193,7 @@ a {
     display: block;
     margin: 5px;
     margin-bottom: 15px;
-    background-image: linear-gradient(to bottom, #FFF 0%, #E6E6E6 100%);
+    background-image: linear-gradient(to bottom, #f4f4f4 0%, #b9bdc4 100%);
     background-repeat: repeat-x;
     /*text-shadow: 0px 1px 0px #565d69;*/
     border-color: #444a54;
@@ -204,10 +204,11 @@ a {
 
 .card-title {
     display: block;
-
-    color: #234e9c;
+    /*color: black;*/
+    /*color: #234e9c;*/
     /*text-shadow: 1px 1px 1px #f4f4f4;*/
     /*font-weight: bold;*/
+    /*opacity: 0.7;*/
     font-size: 110%;
     min-height: 20px;
     min-width:80%;
@@ -219,6 +220,7 @@ a {
     min-width:80% ;
     white-space: pre-wrap;
     text-align: left;
+    opacity: 0.7;
 }
 
 .column .add-card-button {
@@ -292,7 +294,8 @@ a {
 .head-button .sub-menu {
 
     display: none;
-    background-color:#34495e;
+    /*background-color:#34495e;*/
+    background-image: linear-gradient(to bottom, #f4f4f4 0%, #b9bdc4 100%);
     padding: 10px;
     border-radius: 0px 10px 10px 10px;
 
@@ -301,7 +304,7 @@ a {
     z-index: 10;
     left: 0px;
     top: 25px;
-    text-shadow: 1px 1px 2px #444a54;
+    /*text-shadow: 1px 1px 2px #444a54;*/
     box-shadow: 1px 1px 2px #565d69;
 }
 
@@ -311,19 +314,28 @@ a {
 
 
 .card-style-red{
-   background-color: #e74c3c;
-    color:white;
+    background-image: linear-gradient(to bottom, #b83333 0%, #9c4925 100%);
+    color: #f4f4f4;
 }
 
 .card-style-blue{
-    background-color: #3498db;
-    color:white;
+    background-image: linear-gradient(to bottom, #337cb8 0%, #24509c 100%);
+    color: #f4f4f4;
 }
 
 .card-style-green{
-    background-color: #2ecc71;
-    background-image: linear-gradient(to bottom, #94d146 0%, #abf251 100%);
-    /*color:white;*/
+    background-image: linear-gradient(to bottom, #50b833 0%, #279c25 100%);
+    color: #f4f4f4;
+}
+
+.card-style-yellow{
+    background-image: linear-gradient(to bottom, #b8b133 0%, #8c9c25 100%);
+    color: black;
+}
+
+.card-style-gray{
+    background-image: linear-gradient(to bottom, #f4f4f4 0%, #b9bdc4 100%);
+    color: black;
 }
 
 .card-style-option
@@ -331,6 +343,6 @@ a {
     display:inline-block;
     width: 20px;
     height: 20px;
-    border:#ffffff 2px solid;
+    border: #f4f4f4 2px solid;
 }
 

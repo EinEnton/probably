@@ -107,7 +107,7 @@ probablyMain.directive('pbEnterBlur', function () {
         });
     };
 });
-var definedStyles=["red","blue","green"];
+var definedStyles=["red","blue","green","yellow","gray"];
 
 var mainController=probablyMain.controller("mainController",["$scope","$timeout","$localStorage",
     function($scope,$timeout,$localStorage){
