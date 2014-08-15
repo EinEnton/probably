@@ -26,9 +26,6 @@ footer, header, hgroup, menu, nav, section {
     display: block;
 }
 
-/*
-http://colorschemedesigner.com/#3.31Tw0w0w0w0
-*/
 body {
     line-height: 1;
 }
@@ -54,7 +51,7 @@ table {
 
 /* END HTML Reset*/
 body {
-    background-color: #b9bdc4;
+    background-color: #9c9c9c;
     font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Arial, Calibri, Helvetica, Sans-Serif;
 }
 
@@ -66,7 +63,7 @@ a {
     background-image: linear-gradient(to bottom, #337aba 0%, #234e9c 100%);
     background-repeat: repeat-x;
     width: 100%;
-    height: 50px;
+    height: 40px;
     color: #f4f4f4;
     text-align: center;
     vertical-align: middle;
@@ -92,7 +89,7 @@ a {
     display: inline-block;
     margin: 5px;
     padding: 5px;
-    border-radius: 4px;
+    border-radius: 3px;
     background-color:#34495e ;
     color: #f4f4f4;
 }
@@ -121,13 +118,13 @@ a {
 }
 
 #board {
-    margin-top: 60px;
+    margin-top: 53px;
     overflow: auto;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     position: absolute;
-    background: #b9bdc4;
+    background: #b8b8b8;
     left: 0;
     top: 0;
     right: 0;
@@ -141,7 +138,6 @@ a {
     width: 250px;
 
     background-color: #dbdee4;
-    /*background-image: linear-gradient(to bottom, #337aba 0%, #234e9c 100%);*/
     border-radius:3px 3px 3px 3px;
     float: left;
     margin: 20px;
@@ -157,9 +153,8 @@ a {
 }
 
 .card-placeholder{
-    border:dashed #565d69 2px;
-    border-radius: 5px;
-    /*box-shadow: 0px;*/
+    border:dashed #9c9c9c 1px;
+    border-radius: 3px;
     height:50px;
     margin:5px;
 }
@@ -181,8 +176,6 @@ a {
     margin-top: 5px;
     text-align: center;
     color: #f4f4f4;
-    /*font-weight: bold;*/
-    /*text-shadow: 1px 1px 1px #333;*/
     padding: 5px;
     font-size: 120%;
     min-height: 20px;
@@ -195,20 +188,14 @@ a {
     margin-bottom: 15px;
     background-image: linear-gradient(to bottom, #f4f4f4 0%, #b9bdc4 100%);
     background-repeat: repeat-x;
-    /*text-shadow: 0px 1px 0px #565d69;*/
     border-color: #444a54;
-    border-radius: 5px;
-    box-shadow: 1px 1px 1px #222;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px 1px #222;
     padding: 10px;
 }
 
 .card-title {
     display: block;
-    /*color: black;*/
-    /*color: #234e9c;*/
-    /*text-shadow: 1px 1px 1px #f4f4f4;*/
-    /*font-weight: bold;*/
-    /*opacity: 0.7;*/
     font-size: 110%;
     min-height: 20px;
     min-width:80%;
@@ -304,7 +291,6 @@ a {
     z-index: 10;
     left: 0px;
     top: 25px;
-    /*text-shadow: 1px 1px 2px #444a54;*/
     box-shadow: 1px 1px 2px #565d69;
 }
 
