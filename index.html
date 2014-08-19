@@ -39,9 +39,10 @@
         <div ui-sortable="{connectWith:'.card-sortable-container', placeholder:'card-placeholder'}" class="card-sortable-container"
              ng-model="column.cards">
             <div class="card" ng-class="'card-style-'+card.style" ng-repeat="card in column.cards | filter:searchFilter">
-                <a ng-click="deleteCard($parent.$index, $index)" class="card-button"><i class="fa fa-times"></i></a>
-                <a ng-click="startEdit($parent.$index,$index,4)" class="card-button"><i class="fa fa-tag"></i></a>
-
+                <div class="card-buttons-strip">
+                    <a ng-click="deleteCard($parent.$index, $index)" class="card-button"><i class="fa fa-times"></i></a>
+                    <a ng-click="startEdit($parent.$index,$index,4)" class="card-button"><i class="fa fa-tag"></i></a>
+                </div>
 
             <span class="card-info-icon" ng-if="card.repetition">
                 <i class="fa fa-refresh" title="repeats {{card.repetition}}"></i>
@@ -66,9 +67,7 @@
             <span class="card-description" ng-hide="isInEditMode($parent.$index,$index,2)"
                   ng-click="startEdit($parent.$index,$index,2)">
                        <span ng-if="card.description">{{card.description}}</span>
-                <span ng-if="!card.description" class="information-to-user">
-                    Click to Add description
-                </span>
+                <span ng-if="!card.description" class="information-to-user">Click to Add description</span>
             </span>
 
                 <span class="card-description" ng-show="isInEditMode($parent.$index,$index,2)"

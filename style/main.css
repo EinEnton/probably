@@ -192,6 +192,7 @@ a {
     border-radius: 3px;
     box-shadow: 1px 1px 1px 1px #222;
     padding: 10px;
+    position:relative;
 }
 
 .card-title {
@@ -228,6 +229,12 @@ a {
 .card:hover .delete-card ,
 .card:hover .card-button {
     display: block;
+}
+
+.card-buttons-strip{
+    position:absolute;
+    right:0;
+
 }
 
 .card-button {
@@ -281,7 +288,6 @@ a {
 .head-button .sub-menu {
 
     display: none;
-    /*background-color:#34495e;*/
     background-image: linear-gradient(to bottom, #f4f4f4 0%, #b9bdc4 100%);
     padding: 10px;
     border-radius: 0px 10px 10px 10px;
