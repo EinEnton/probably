@@ -18,7 +18,7 @@
                                                                                      ng-model="searchFilter"><a><i
         class="fa fa-search"></i></a> </span>
 </div>
-<div id="board" ui-sortable ng-model="board.columns">
+<div id="board" ui-sortable="{placeholder:'column-placeholder'}"  ng-model="board.columns">
     <div class="column" ng-repeat="column in board.columns">
         <div class="column-head">
         <a ng-click="deleteColumn($index)" class="delete-column"><i class="fa fa-times"></i></a>
@@ -40,8 +40,8 @@
              ng-model="column.cards">
             <div class="card" ng-class="'card-style-'+card.style" ng-repeat="card in column.cards | filter:searchFilter">
                 <div class="card-buttons-strip">
-                    <a ng-click="deleteCard($parent.$index, $index)" class="card-button"><i class="fa fa-times"></i></a>
-                    <a ng-click="startEdit($parent.$index,$index,4)" class="card-button"><i class="fa fa-tag"></i></a>
+                    <a ng-click="deleteCard($parent.$index, $index)" class="card-button" title="delete card"><i class="fa fa-times"></i></a>
+                    <a ng-click="startEdit($parent.$index,$index,4)" class="card-button" title="set style"><i class="fa fa-tag"></i></a>
                 </div>
 
             <span class="card-info-icon" ng-if="card.repetition">

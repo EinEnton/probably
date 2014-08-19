@@ -150,6 +150,7 @@ a {
 .column .card-sortable-container {
     overflow: auto;
     min-height: 50px;
+
 }
 
 .card-placeholder{
@@ -157,6 +158,16 @@ a {
     border-radius: 3px;
     height:50px;
     margin:5px;
+}
+
+.column-placeholder
+{
+    display: block;
+    border:dashed #9c9c9c 1px;
+    height:100%;
+    width: 250px;
+    background-color: #dbdee4;
+    border-radius:3px 3px 3px 3px;
 }
 
 .column .column-head{
@@ -233,15 +244,29 @@ a {
 
 .card-buttons-strip{
     position:absolute;
-    right:0;
-
+    right:1px;
+    top:-2px;
+    width: 24px;
+    background-image: linear-gradient(to bottom, #565d69 0%, #444a54 100%);
+    border-radius: 4px;
 }
 
 .card-button {
     display: none;
-    float: right;
+    color: #fff;
+    font-size: 120%;
+    text-shadow: 1px 1px 2px black;
+    width: 16px;
+    height: 16px;
+    padding:2px;
+    margin:3px;
 
-    color: #444a54;
+
+}
+
+.card-button:hover{
+    background-image: linear-gradient(to bottom, #f4f4f4 0%, #b9bdc4 100%);
+    border-radius: 4px;
 }
 
 .card-info-icon {
