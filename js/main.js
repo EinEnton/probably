@@ -161,6 +161,8 @@ var mainController=probablyMain.controller("mainController",["$scope","$timeout"
 
         };
 
+
+
         $scope.addCard=function(colIndex){
             $scope.board.columns[colIndex].cards.push(new DefaultCard());
             $timeout(function(){
