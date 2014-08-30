@@ -38,16 +38,14 @@
 
         <div ui-sortable="{connectWith:'.card-sortable-container', placeholder:'card-placeholder'}" class="card-sortable-container"
              ng-model="column.cards">
-            <div class="card" ng-class="'card-style-'+card.style" ng-repeat="card in column.cards | filter:searchFilter">
+            <div class="card card-style-{{card.style}}" ng-class="{'card-in-edit-mode':isInEditMode($parent.$index,$index)}" ng-repeat="card in column.cards | filter:searchFilter">
                 <div class="card-buttons-strip">
                     <a ng-click="deleteCard($parent.$index, $index)" class="card-button" title="delete card"><i class="fa fa-times"></i></a>
                     <a ng-click="startEdit($parent.$index,$index,4)" class="card-button" title="set style"><i class="fa fa-tag"></i></a>
                     <a ng-click="startEdit($parent.$index,$index,5)" class="card-button" title="set repetition"><i class="fa fa-refresh"></i></a>
                 </div>
 
-            <span class="card-info-icon" ng-if="card.repetition">
-                <i class="fa fa-refresh" title="repeats {{card.repetition}}"></i>
-            </span>
+
             <span class="card-title" ng-hide="isInEditMode($parent.$index,$index,1)"
                   ng-click="startEdit($parent.$index,$index,1)">
             <span ng-if="card.title">
@@ -74,13 +72,34 @@
                 <span class="card-description" ng-show="isInEditMode($parent.$index,$index,2)"
                       ng-click="startEdit($parent.$index,$index,2)"><textarea class="editor" ng-model="card.description"
                                                                               ng-blur="stopEdit($parent.$index,$index,2)"></textarea></span>
+
+
+
+
+
                 <span class="card-style-selector" ng-show="isInEditMode($parent.$index,$index,4)">
+                    <span class="card-editor-head"><i class="fa fa-tag"></i>Style</span>
                     <a class="card-style-option" ng-repeat="style in allStyles" ng-class="'card-style-'+style" ng-click="setStyle(card,style)"></a>
+
                 </span>
 
                 <span class="card-repetition-editor" ng-show="isInEditMode($parent.$index,$index,5)">
-
+                    <span class="card-editor-head"><i class="fa fa-refresh"></i>Repetition</span>
+                    <a class="card-repetition-option" ng-click="setRepetition(card,'','')">no repetition</a>
+                    <a class="card-repetition-option" ng-click="setRepetition(card,column.caption,'daily')">daily</a>
+                    <a class="card-repetition-option" ng-click="setRepetition(card,column.caption,'monday')">every monday</a>
+                    <a class="card-repetition-option" ng-click="setRepetition(card,column.caption,'tuesday')">every tuesday</a>
+                    <a class="card-repetition-option" ng-click="setRepetition(card,column.caption,'wednesday')">every wednesday</a>
+                    <a class="card-repetition-option" ng-click="setRepetition(card,column.caption,'thursday')">every thursday</a>
+                    <a class="card-repetition-option" ng-click="setRepetition(card,column.caption,'friday')">every friday</a>
+                    <a class="card-repetition-option" ng-click="setRepetition(card,column.caption,'saturday')">every saturday</a>
+                    <a class="card-repetition-option" ng-click="setRepetition(card,column.caption,'sunday')">every sunday</a>
                 </span>
+            <div class="card-footer">
+                <span class="card-info-icon" ng-if="card.repetition">
+                    <i class="fa fa-refresh" title="repeats {{card.repetition}} and resets to {{card.repetitionTarget}}"></i>
+                </span>
+            </div>
             </div>
         </div>
         <a ng-click="addCard($index)" class="add-card-button">add card</a>

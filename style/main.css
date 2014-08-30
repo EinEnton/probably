@@ -270,14 +270,32 @@ a {
     border-radius: 4px;
 }
 
+.card-footer{
+    clear:both;
+    height: 10px;
+    margin:4px;
+}
+
 .card-info-icon {
-    float: right;
-    margin-right: 10px;
-    color: #565d69;
+    float: left;
+    clear: both;
+    margin-right: 5px;
+    color: #c5d5e6;
+    text-shadow: 1px 1px 2px #333;
 }
 
 .card-info-icon:hover {
     color: #444a54;
+}
+
+.card:not(.card-in-edit-mode) .information-to-user{
+    display:none;
+}
+.card:hover .information-to-user{
+    display:block;
+}
+.card-in-edit-mode .information-to-user{
+    display:block;
 }
 
 .information-to-user, .information-column-header {
@@ -330,6 +348,37 @@ a {
     display: block;
 }
 
+.card-editor-head{
+    font-size: 80%;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    border-top: 2px black solid;
+    padding-top:10px;
+    padding-bottom:10px;
+    clear: both;
+}
+.card-editor-head i{
+    margin-right: 10px;
+}
+
+a.card-repetition-option{
+    display:block;
+    margin:5px;
+    margin-left: 20px;
+}
+
+a.card-repetition-option:hover{
+    font-weight: bold;
+    margin-left: 0px;
+}
+
+a.card-repetition-option:hover::before{
+    font-family: FontAwesome;
+    content: "\f00C";
+    margin-right: 5px;
+    width: 10px;
+}
 
 .card-style-red{
     background-image: linear-gradient(to bottom, #b83333 0%, #9c4925 100%);
